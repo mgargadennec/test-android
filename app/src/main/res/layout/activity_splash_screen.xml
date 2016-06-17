@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical"
+  android:background="@color/colorPrimary"
+  android:measureWithLargestChild="false">
+
+  <com.joanzapata.iconify.widget.IconTextView
+    android:id="@+id/splashscreen"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="150dp"
+    android:textColor="@android:color/white"
+    android:layout_gravity="center"
+    android:text="{fa-leaf}" />
+
+
+  <com.joanzapata.iconify.widget.IconTextView
+    android:id="@+id/loader"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textSize="20dp"
+    android:textColor="@android:color/white"
+    android:text="{fa-cog spin}" />
+
+</LinearLayout>

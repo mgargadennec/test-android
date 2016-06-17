@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+  <item
+    android:id="@+id/nav_home"
+    android:title="Acceuil" />
+
+  <item
+    android:id="@+id/nav_administration"
+    android:title="Administration">
+
+    <menu>
+      <group android:checkableBehavior="single">
+        <item
+          android:id="@+id/nav_user"
+          android:title="Utilisateurs"></item>
+        <item
+          android:id="@+id/nav_groups"
+          android:title="Groupes"></item>
+        <item
+          android:id="@+id/nav_roles"
+          android:title="Roles"></item>
+      </group>
+    </menu>
+  </item>
+
+  <item
+    android:id="@+id/nav_webmastering"
+    android:icon="@drawable/ic_menu_manage"
+    android:title="Webmastering">
+
+    <menu>
+      <item
+        android:id="@+id/nav_templates"
+        android:title="Templates"></item>
+      <item
+        android:id="@+id/nav_themes"
+        android:title="Thèmes"></item>
+    </menu>
+  </item>
+  <item
+    android:id="@+id/nav_multisite"
+    android:title="Gestion multisite">
+    <menu>
+      <item
+        android:id="@+id/nav_websites"
+        android:title="Site web"></item>
+      <item
+        android:id="@+id/nav_pages"
+        android:title="Page"></item>
+    </menu>
+  </item>
+
+  <item
+    android:id="@+id/nav_content"
+    android:icon="@drawable/ic_menu_manage"
+    android:title="Contenu">
+
+    <menu>
+      <item
+        android:id="@+id/nav_widgets"
+        android:title="Widgets"></item>
+      <item
+        android:id="@+id/nav_datasources"
+        android:title="Datasources"></item>
+    </menu>
+  </item>
+</menu>
