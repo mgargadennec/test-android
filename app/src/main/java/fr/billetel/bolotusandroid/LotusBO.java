@@ -19,10 +19,13 @@ public class LotusBO extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
+
     Iconify
       .with(new FontAwesomeModule())
       .with(new LotusFontModule());
 
     DaggerLotusComponent.builder().build();
+
+
   }
 }

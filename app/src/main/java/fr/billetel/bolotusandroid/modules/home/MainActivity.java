@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity
     DrawerLayout drawerLayout = configureDrawer(toolbar);
     NavigationView navigationView = configureNavigationView();
 
-    HttpGetTask<Void, Resource> task = new HttpGetTask<Void, Resource>(this, this, Resource.class);
-    task.execute(new ApiRootRequest());
+//    HttpGetTask<Void, Resource> task = new HttpGetTask<Void, Resource>(this, this, Resource.class);
+//    task.execute(new ApiRootRequest());
   }
 
   private Toolbar configureToolbar() {

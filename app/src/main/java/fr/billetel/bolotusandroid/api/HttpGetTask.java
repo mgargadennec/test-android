@@ -54,7 +54,8 @@ public class HttpGetTask<Progress, Result> extends AsyncTask<ApiGetRequest, Prog
   private HttpGetTaskDelegate<Result> delegate;
   private Class<Result> resultClass;
 
-  public HttpGetTask(Activity activity, HttpGetTaskDelegate delegate, Class<Result> resultClass) {
+  public HttpGetTask(RestTemplate restTemplate, Activity activity, HttpGetTaskDelegate delegate, Class<Result> resultClass) {
+    this.restTemplate = restTemplate;
     this.activity = activity;
     this.delegate = delegate;
     this.resultClass = resultClass;
@@ -62,12 +63,12 @@ public class HttpGetTask<Progress, Result> extends AsyncTask<ApiGetRequest, Prog
 
   @Override
   protected Result doInBackground(ApiGetRequest... params) {
-  return doExecuteRequest(params);
+    return doExecuteRequest(params);
   }
 
   private Result doExecuteRequest(ApiGetRequest... params) {
     try {
-      if(params[0].getUrl()!=null) {
+      if (params[0].getUrl() != null) {
         return doRequest(restTemplate, params[0].getUrl(), resultClass);
       }
     } catch (Exception e) {
@@ -80,8 +81,8 @@ public class HttpGetTask<Progress, Result> extends AsyncTask<ApiGetRequest, Prog
 
   private Result doRequest(RestTemplate restTemplate, String url, Class<Result> resultType) {
     HttpHeaders headers = new HttpHeaders();
-    headers.add("Authorization","Bearer 73db6457-1c9c-4ed2-be10-742ada31b9ea");
-    ResponseEntity<Result> response = restTemplate.exchange(url, HttpMethod.GET,new HttpEntity<Object>(headers),resultType);
+    headers.add("Authorization", "Bearer 73db6457-1c9c-4ed2-be10-742ada31b9ea");
+    ResponseEntity<Result> response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<Object>(headers), resultType);
     return response.getBody();
   }
 
