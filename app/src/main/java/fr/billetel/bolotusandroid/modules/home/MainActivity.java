@@ -1,13 +1,9 @@
-package fr.billetel.bolotusandroid;
+package fr.billetel.bolotusandroid.modules.home;
 
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -20,15 +16,18 @@ import android.view.MenuItem;
 import com.joanzapata.iconify.IconDrawable;
 import com.joanzapata.iconify.fonts.FontAwesomeIcons;
 
+import org.springframework.hateoas.PagedResources;
 import org.springframework.hateoas.Resource;
 
+import fr.billetel.bolotusandroid.R;
 import fr.billetel.bolotusandroid.api.HttpGetTask;
+import fr.billetel.bolotusandroid.api.request.ApiFollowLinkRequest;
 import fr.billetel.bolotusandroid.api.request.ApiRootRequest;
 
 public class MainActivity extends AppCompatActivity
   implements NavigationView.OnNavigationItemSelectedListener
   , HomeFragment.OnFragmentInteractionListener,
-  HttpGetTask.HttpTaskDelegate<Resource> {
+  HttpGetTask.HttpGetTaskDelegate<Resource> {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -159,7 +158,10 @@ public class MainActivity extends AppCompatActivity
 
   @Override
   public void onHttpTaskSuccess(Resource resource) {
-    Log.i(this.getClass().toString(), "Resource success !");
+    Log.i(this.getClass().toString(), "Resource success !" + resource.toString()+" / " +resource.getContent()+" / "+resource.getId());
+
+    HttpGetTask<Void,PagedResources> userTask = new HttpGetTask<Void, PagedResources>(this, this, PagedResources.class);
+    userTask.execute(new ApiFollowLinkRequest(resource,"pagedUsers"));
   }
 
   @Override

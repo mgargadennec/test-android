@@ -1,4 +1,4 @@
-package fr.billetel.bolotusandroid.api;
+package fr.billetel.bolotusandroid.api.mapping;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;

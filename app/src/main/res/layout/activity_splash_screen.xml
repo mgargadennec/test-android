@@ -8,20 +8,20 @@
 
   <com.joanzapata.iconify.widget.IconTextView
     android:id="@+id/splashscreen"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textSize="150dp"
     android:textColor="@android:color/white"
     android:layout_gravity="center"
-    android:text="{fa-leaf}" />
+    android:text="{lotus-application}" />
 
 
   <com.joanzapata.iconify.widget.IconTextView
     android:id="@+id/loader"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:textSize="20dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:textColor="@android:color/white"
-    android:text="{fa-cog spin}" />
+    android:layout_gravity="center"
+    android:text="Lotus {fa-cog spin}" />
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package fr.billetel.bolotusandroid.api;
+package fr.billetel.bolotusandroid.api.mapping;
 
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.Resource;

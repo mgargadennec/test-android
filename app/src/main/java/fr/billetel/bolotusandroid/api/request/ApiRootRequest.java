@@ -10,7 +10,7 @@ public class ApiRootRequest implements ApiGetRequest {
 
   @Override
   public String getUrl() {
-    return "http://www.fnacspectacles.mgargadennec.cardiweb.com/lotus-bo/api/";
+    return "https://www.fnacspectacles.mgargadennec.cardiweb.com/lotus-bo/api/";
   }
 
   @Override

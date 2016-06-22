@@ -1,4 +1,4 @@
-package fr.billetel.bolotusandroid;
+package fr.billetel.bolotusandroid.modules.home;
 
 import android.content.Context;
 import android.net.Uri;
@@ -7,6 +7,8 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import fr.billetel.bolotusandroid.R;
 
 
 public class HomeFragment extends Fragment {
@@ -43,6 +45,7 @@ public class HomeFragment extends Fragment {
     super.onDetach();
     mListener = null;
   }
+
   public interface OnFragmentInteractionListener {
     void onFragmentInteraction(Uri uri);
   }
